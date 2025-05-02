@@ -3,12 +3,15 @@ import NavBarNTec from 'components/navbar';
 import ContainerNTec from 'components/container';
 import Aside from 'components/aside';
 import MainNTec from 'components/main';
+import PiuNTec from 'components/piu';
 
 const ExampleTemplate = () => {
     return (
         <ContainerNTec>
             <NavBarNTec />
-            <MainNTec />
+            <MainNTec>
+                <PiuNTec />
+            </MainNTec>
             <Aside />
         </ContainerNTec>
     );

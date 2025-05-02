@@ -1,7 +1,11 @@
 import * as S from './styles';
 
-const MainNTec: React.FC = () => {
-    return <S.StyledMain />;
+type ContainerProps = {
+    children: React.ReactNode;
+};
+
+const MainNTec: React.FC<ContainerProps> = ({ children }) => {
+    return <S.StyledMain>{children}</S.StyledMain>;
 };
 
 export default MainNTec;
