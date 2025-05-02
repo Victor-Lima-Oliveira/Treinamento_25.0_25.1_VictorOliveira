@@ -7,9 +7,9 @@ import MainNTec from 'components/main';
 const ExampleTemplate = () => {
     return (
         <ContainerNTec>
-            <NavBarNTec></NavBarNTec>
-            <MainNTec></MainNTec>
-            <Aside></Aside>
+            <NavBarNTec />
+            <MainNTec />
+            <Aside />
         </ContainerNTec>
     );
 };

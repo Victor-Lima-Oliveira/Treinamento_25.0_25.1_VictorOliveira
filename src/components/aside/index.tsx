@@ -1,7 +1,7 @@
 import * as S from './styles';
 
-const AsideNTec : React.FC = () =>{
-    return (   
+const AsideNTec: React.FC = () => {
+    return (
         <S.StyledAside>
             <S.StyledAsideItem>
                 <S.StyledAsideLink href="#">Home</S.StyledAsideLink>
@@ -14,6 +14,6 @@ const AsideNTec : React.FC = () =>{
             </S.StyledAsideItem>
         </S.StyledAside>
     );
-}
+};
 
 export default AsideNTec;

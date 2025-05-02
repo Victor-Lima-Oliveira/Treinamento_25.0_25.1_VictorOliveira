@@ -1,7 +1,7 @@
 import * as S from './styles';
 
-const NavbarNTec : React.FC = () =>{
-    return (   
+const NavbarNTec: React.FC = () => {
+    return (
         <S.StyledNavbar>
             <S.StyledLogo>
                 <S.StyledImg src="/assets/images/logo.png" alt="logo" />
@@ -13,6 +13,6 @@ const NavbarNTec : React.FC = () =>{
             </S.StyledNav>
         </S.StyledNavbar>
     );
-}
+};
 
 export default NavbarNTec;
