@@ -8,6 +8,14 @@ import SmileIcon from 'assets/icons/SmileIcon';
 import TagIcon from 'assets/icons/TagIcon';
 import GifIcon from 'assets/icons/GifIcon';
 import SendIcon from 'assets/icons/SendIcon';
+import HomeIcon from 'assets/icons/HomeIcon';
+import NotifyIcon from 'assets/icons/NotifyIcon';
+import MessageIcon from 'assets/icons/MessageIcon';
+import CloudIcon from 'assets/icons/CloudIcon';
+import PersonIcon from 'assets/icons/PersonIcon';
+import SettingsIcons from 'assets/icons/SettingsIcons';
+import LogoutIcon from 'assets/icons/LogoutIcon';
+
 import { IconName } from '../Icon/IconName';
 
 // Mapeando os nomes dos ícones para seus respectivos componentes
@@ -25,7 +33,14 @@ const IconRegistry: Record<
     Smile: SmileIcon,
     Tag: TagIcon,
     Gif: GifIcon,
-    Send: SendIcon
+    Send: SendIcon,
+    Notify: NotifyIcon,
+    Message: MessageIcon,
+    Cloud: CloudIcon,
+    Person: PersonIcon,
+    Settings: SettingsIcons,
+    Logout: LogoutIcon,
+    Home: HomeIcon
 };
 
 export default IconRegistry;

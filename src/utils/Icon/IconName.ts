@@ -9,4 +9,11 @@ export type IconName =
     | 'Tag'
     | 'Gif'
     | 'Send'
+    | 'Home'
+    | 'Notify'
+    | 'Message'
+    | 'Cloud'
+    | 'Person'
+    | 'Settings'
+    | 'Logout'
     | 'None';
