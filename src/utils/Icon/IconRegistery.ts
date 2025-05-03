@@ -15,6 +15,7 @@ import CloudIcon from 'assets/icons/CloudIcon';
 import PersonIcon from 'assets/icons/PersonIcon';
 import SettingsIcons from 'assets/icons/SettingsIcons';
 import LogoutIcon from 'assets/icons/LogoutIcon';
+import FireIcon from 'assets/icons/FireIcon';
 
 import { IconName } from '../Icon/IconName';
 
@@ -40,6 +41,7 @@ const IconRegistry: Record<
     Person: PersonIcon,
     Settings: SettingsIcons,
     Logout: LogoutIcon,
+    Fire: FireIcon,
     Home: HomeIcon
 };
 

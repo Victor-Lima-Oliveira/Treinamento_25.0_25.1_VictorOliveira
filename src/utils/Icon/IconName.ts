@@ -16,4 +16,5 @@ export type IconName =
     | 'Person'
     | 'Settings'
     | 'Logout'
+    | 'Fire'
     | 'None';
