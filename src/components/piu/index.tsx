@@ -1,7 +1,7 @@
 import Icon from 'components/Icon';
 import * as S from './styles';
 
-interface PiuProps {
+export interface PiuProps {
     id: string;
     name: string;
     img: string;
@@ -32,7 +32,7 @@ const PiuNTec: React.FC<PiuProps> = (Props) => {
                     {Props.comments}
                 </S.StyledPiuFooterText>
                 <S.StyledPiuFooterText>
-                    <Icon name="Like" color="#ff0000" />
+                    <Icon name="Like" />
                     {Props.likes}
                 </S.StyledPiuFooterText>
             </S.StyledPiuFooter>

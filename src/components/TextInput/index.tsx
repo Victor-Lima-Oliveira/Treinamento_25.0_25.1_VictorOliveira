@@ -8,6 +8,8 @@ interface TextInputProps {
     row?: number;
     maxLength?: number;
     footer?: React.ReactNode;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export const TextInput = ({
@@ -15,7 +17,9 @@ export const TextInput = ({
     icon = 'None',
     row = 1,
     maxLength,
-    footer
+    footer,
+    value,
+    onChange
 }: TextInputProps) => {
     return (
         <S.StyledInput>
@@ -24,6 +28,8 @@ export const TextInput = ({
                     placeholder={placeholder}
                     maxLength={maxLength}
                     rows={row}
+                    value={value}
+                    onChange={onChange}
                 />
                 {icon !== 'None' && (
                     <S.StyledIconInput>
@@ -41,5 +47,7 @@ TextInput.defaultProps = {
     icon: 'None',
     row: 1,
     maxLength: undefined,
-    footer: undefined
+    footer: undefined,
+    onChange: undefined,
+    value: undefined
 };
