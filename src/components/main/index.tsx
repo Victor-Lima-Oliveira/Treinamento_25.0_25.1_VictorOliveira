@@ -1,28 +1,28 @@
-import * as S from './styles';
 import PiuNTec from 'components/piu';
 import { TextInput } from 'components/TextInput';
-import Icon, { IconName } from 'utils/icons';
+import Icon from 'components/Icon';
+import * as S from './styles';
 
 const MainNTec: React.FC = () => {
     return (
         <S.StyledMain>
-            <TextInput placeholder="Ouvir um piu..." Icon={IconName.Search} />
+            <TextInput placeholder="Ouvir um piu..." icon="Search" />
             <TextInput
                 placeholder="Quero dar um piu..."
-                Icon={IconName.None}
-                MaxLength={140}
-                Row={5}
+                icon="None"
+                maxLength={140}
+                row={5}
                 footer={
                     <S.Icons>
                         <S.Icons1>
-                            <Icon name={IconName.Image} color="#fff" />
-                            <Icon name={IconName.Video} color="#fff" />
-                            <Icon name={IconName.Smile} color="#fff" />
-                            <Icon name={IconName.Tag} color="#fff" />
-                            <Icon name={IconName.Gif} color="#fff" />
+                            <Icon name="Image" color="#fff" />
+                            <Icon name="Video" color="#fff" />
+                            <Icon name="Smile" color="#fff" />
+                            <Icon name="Tag" color="#fff" />
+                            <Icon name="Gif" color="#fff" />
                         </S.Icons1>
                         <S.Icons1>
-                            <Icon name={IconName.Send} color="#fff" />
+                            <Icon name="Send" color="#fff" />
                         </S.Icons1>
                     </S.Icons>
                 }

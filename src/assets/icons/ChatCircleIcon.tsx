@@ -12,9 +12,9 @@ const ChatCircle: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path
             d="M21 12.5C21 17.4706 16.9706 21.5 12 21.5C10.2289 21.5 8.57736 20.9884 7.18497 20.105L3 21.5L4.39499 17.315C3.51156 15.9226 3 14.2711 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         />
     </svg>
 );
