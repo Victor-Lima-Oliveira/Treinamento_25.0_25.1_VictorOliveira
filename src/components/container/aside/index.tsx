@@ -1,5 +1,5 @@
 import Icon from 'components/Icon';
-import TrendsPiuNTec from 'components/trendsPiu';
+import TrendsPiuNTec from 'components/container/aside/trendsPiu';
 import * as S from './styles';
 
 export const trendsPiulist = [

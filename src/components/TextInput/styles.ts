@@ -5,6 +5,12 @@ export const StyledInput = styled.div`
     border-radius: 8px;
     background: var(--Slate-8, #4c5155);
     width: 100%;
+
+    &:focus-within {
+        border: 2px solid #fff;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
 `;
 
 export const StyledInputHead = styled.div`
@@ -17,12 +23,6 @@ export const StyledInputHead = styled.div`
     &::placeholder {
         color: #fff;
         opacity: 0.5;
-    }
-
-    &:focus {
-        border: 1px solid #fff;
-        color: #fff;
-        transition: all 0.3s ease-in-out;
     }
 `;
 

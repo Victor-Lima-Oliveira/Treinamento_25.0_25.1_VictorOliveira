@@ -6,7 +6,7 @@ const LikeIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         width="24"
         height="25"
         viewBox="0 0 24 25"
-        fill="currentColor"
+        fill="none"
         {...props}
     >
         <path

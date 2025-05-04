@@ -48,7 +48,6 @@ export const StyledPiuTitleText = styled.p`
     color: var(--Slate-12, #ecedee);
     text-align: center;
 
-    font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -59,7 +58,6 @@ export const StyledPiuSubtitle = styled.p`
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
 
-    font-family: Nunito;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -69,7 +67,6 @@ export const StyledPiuSubtitle = styled.p`
 
 export const StyledPiuDescription = styled.p`
     color: var(--Slate-12, #ecedee);
-    font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +82,6 @@ export const StyledPiuFooter = styled.div`
 
 export const StyledPiuFooterText = styled.p`
     color: #ecedee;
-    font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -93,4 +89,5 @@ export const StyledPiuFooterText = styled.p`
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
 `;

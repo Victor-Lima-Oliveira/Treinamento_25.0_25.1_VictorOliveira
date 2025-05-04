@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface StyledLinkProps {
+    isActive?: boolean;
+}
+
 export const StyledNavbar = styled.div`
     width: 20%;
     height: 100vh;
@@ -40,11 +44,12 @@ export const StyledNav = styled.nav`
     flex-direction: column;
     padding: 0px 16px;
     flex: 1;
+    margin-top: 20px;
+    gap: 8px;
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.a<StyledLinkProps>`
     color: var(--Slate-12, #ecedee);
-    font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -55,6 +60,17 @@ export const StyledLink = styled.a`
     justify-content: flex-start;
     gap: 8px;
     padding: 8px 0px;
+    border-radius: 0px 16px 16px 0px;
+    padding: 16px 0px;
+    margin-left: -14px;
+    padding-left: 14px;
+
+    background: ${({ isActive }) =>
+        isActive ? 'var(--Indigo-9, #3e63dd)' : 'transparent'};
+
+    &:hover {
+        background: var(--Slate-3, #202425);
+    }
 `;
 
 export const StyledFooter = styled.div`

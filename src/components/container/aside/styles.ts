@@ -25,7 +25,6 @@ export const StyledAsideLink = styled.a``;
 
 export const StyledTitle = styled.h2`
     color: var(--Slate-12, #ecedee);
-    font-family: Nunito;
     font-size: 28px;
     font-style: normal;
     font-weight: 700;

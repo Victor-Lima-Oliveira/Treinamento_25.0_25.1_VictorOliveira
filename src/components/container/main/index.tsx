@@ -1,4 +1,4 @@
-import PiuNTec, { PiuProps } from 'components/piu';
+import PiuNTec, { PiuProps } from 'components/container/main/piu';
 import { TextInput } from 'components/TextInput';
 import Icon from 'components/Icon';
 import { useState } from 'react';
@@ -10,34 +10,49 @@ export const PiusBase: PiuProps[] = [
         id: 1,
         name: 'Nome de usuario',
         idUser: 'user',
-        img: '/assets/images/user.png',
+        img: 'assets/images/voce.png',
         description:
             'Only love can hurt like this... only love can hurt like this',
         comments: 1,
         likes: 2,
-        repiu: 1
+        repiu: 1,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     },
     {
         id: 2,
         name: 'Pedro Souza',
         idUser: 'pebaiano',
-        img: '/assets/images/pebaiano.png',
+        img: 'assets/images/pebaiano.png',
         description:
             'NÃO há imoralidade em furar a fila do bandejão quem não defende é porque não tem amigos',
         comments: 3,
         likes: 8,
-        repiu: 5
+        repiu: 5,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     },
     {
         id: 3,
         name: 'Henri Sanson',
         idUser: 'OCarasco',
-        img: '/assets/images/ocarasco.png',
+        img: 'assets/images/ocarasco.png',
         description:
             'Hoje o sol não nasceu em Versalhes — caiu em Paris às 10h22. Brilhou pela última vez na Place de la Révolution. E fui eu quem apagou a luz. #AuRevoirRoi #CorteReal',
         comments: 5,
         likes: 8,
-        repiu: 5
+        repiu: 5,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     },
     {
         id: 4,
@@ -45,10 +60,15 @@ export const PiusBase: PiuProps[] = [
         idUser: 'NovoTestamento',
         description:
             '95 razões pra você não me subestimar — preguei na porta, mas foi na alma que doeu. Indulgência não compra perdão, e agora é pessoal. #EscorpiãoReforma #FogoEfé',
-        img: '/assets/images/novotestamento.png',
+        img: 'assets/images/novotestamento.png',
         comments: 5,
         likes: 8,
-        repiu: 5
+        repiu: 5,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     },
     {
         id: 5,
@@ -56,10 +76,15 @@ export const PiusBase: PiuProps[] = [
         idUser: 'Sol',
         description:
             'E pur si muove — mas fiquem à vontade pra continuar achando que o universo gira em torno de vocês. #SpoilerDoSéculoXVII',
-        img: '/assets/images/sol.png',
+        img: 'assets/images/sol.png',
         comments: 5,
         likes: 8,
-        repiu: 5
+        repiu: 5,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     },
     {
         id: 6,
@@ -67,10 +92,15 @@ export const PiusBase: PiuProps[] = [
         idUser: 'OConquistador',
         description:
             'Bati à porta de Portugal e o rei correu pro outro lado do oceano. Dizem que trouxe a corte. Eu digo que trouxe o medo. #CoragemFica #DomJoãoVoa',
-        img: '/assets/images/oconquistador.png',
+        img: 'assets/images/oconquistador.png',
         comments: 5,
         likes: 8,
-        repiu: 5
+        repiu: 5,
+        liked: false,
+        repiued: false,
+        onDelete: () => undefined,
+        onLike: () => undefined,
+        onRepiu: () => undefined
     }
 ];
 
@@ -81,6 +111,38 @@ export const usuarioLogado = {
 const MainNTec: React.FC = () => {
     const [Pius, setPius] = useState<PiuProps[]>(PiusBase);
     const [newPiuText, setNewPiuText] = useState('');
+
+    const callbackDelete = (id: number) => {
+        setPius((prev) => prev.filter((piu) => piu.id !== id));
+    };
+
+    const callbackLike = (id: number) => {
+        setPius((prev) =>
+            prev.map((piu) =>
+                piu.id === id
+                    ? {
+                          ...piu,
+                          likes: piu.liked ? piu.likes - 1 : piu.likes + 1,
+                          liked: !piu.liked
+                      }
+                    : piu
+            )
+        );
+    };
+
+    const callbackRepiu = (id: number) => {
+        setPius((prev) =>
+            prev.map((piu) =>
+                piu.id === id
+                    ? {
+                          ...piu,
+                          repiu: piu.repiued ? piu.repiu - 1 : piu.repiu + 1,
+                          repiued: !piu.repiued
+                      }
+                    : piu
+            )
+        );
+    };
 
     return (
         <S.StyledMain>
@@ -117,7 +179,15 @@ const MainNTec: React.FC = () => {
                                             description: newPiuText,
                                             comments: 0,
                                             likes: 0,
-                                            repiu: 0
+                                            repiu: 0,
+                                            liked: false,
+                                            repiued: false,
+                                            onDelete: () =>
+                                                callbackDelete(prev.length + 1),
+                                            onLike: () =>
+                                                callbackLike(prev.length + 1),
+                                            onRepiu: () =>
+                                                callbackRepiu(prev.length + 1)
                                         },
                                         ...prev // Coloca o novo piu no começo da lista
                                     ]);
@@ -141,6 +211,11 @@ const MainNTec: React.FC = () => {
                     comments={piu.comments}
                     likes={piu.likes}
                     repiu={piu.repiu}
+                    liked={piu.liked}
+                    repiued={piu.repiued}
+                    onDelete={() => callbackDelete(piu.id)}
+                    onLike={() => callbackLike(piu.id)}
+                    onRepiu={() => callbackRepiu(piu.id)}
                 />
             ))}
         </S.StyledMain>

@@ -1,5 +1,5 @@
 import Icon from 'components/Icon';
-import { usuarioLogado as U } from 'components/main';
+import { usuarioLogado as U } from 'components/container/main';
 import * as S from './styles';
 
 export interface PiuProps {
@@ -11,6 +11,11 @@ export interface PiuProps {
     comments: number;
     likes: number;
     repiu: number;
+    liked: boolean;
+    repiued: boolean;
+    onDelete: () => void;
+    onLike: () => void;
+    onRepiu: () => void;
 }
 
 const PiuNTec: React.FC<PiuProps> = ({
@@ -20,34 +25,44 @@ const PiuNTec: React.FC<PiuProps> = ({
     description,
     comments,
     likes,
-    repiu
+    repiu,
+    liked,
+    repiued,
+    onDelete,
+    onLike,
+    onRepiu
 }) => {
     return (
         <S.StyledPiu>
             <S.StyledPiuHead>
-                <S.StyledPiuImage
-                    hasBorder={idUser === U.id}
-                    src={img}
-                    alt="piu"
-                />
+                <S.StyledPiuImage hasBorder src={img} alt="piu" />
                 <S.StyledPiuTitle>
                     <S.StyledPiuTitleText>{name}</S.StyledPiuTitleText>
                     <S.StyledPiuTitleText>@{idUser}</S.StyledPiuTitleText>
                 </S.StyledPiuTitle>
-                {idUser === U.id && <Icon name="Trash" color="red" />}
+                {idUser === U.id && (
+                    <Icon name="Trash" color="red" onClick={onDelete} />
+                )}
             </S.StyledPiuHead>
             <S.StyledPiuDescription>{description}</S.StyledPiuDescription>
             <S.StyledPiuFooter>
-                <S.StyledPiuFooterText>
-                    <Icon name="Reload" />
+                <S.StyledPiuFooterText onClick={onRepiu}>
+                    <Icon
+                        name="Reload"
+                        color={repiued ? '#3E63DD' : 'currentColor'}
+                    />
                     {repiu}
                 </S.StyledPiuFooterText>
                 <S.StyledPiuFooterText>
                     <Icon name="ChatCircle" />
                     {comments}
                 </S.StyledPiuFooterText>
-                <S.StyledPiuFooterText>
-                    <Icon name="Like" />
+                <S.StyledPiuFooterText onClick={onLike}>
+                    <Icon
+                        name="Like"
+                        fill={liked ? 'currentColor' : 'none'}
+                        color={liked ? 'red' : 'currentColor'}
+                    />
                     {likes}
                 </S.StyledPiuFooterText>
             </S.StyledPiuFooter>
