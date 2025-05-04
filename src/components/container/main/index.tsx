@@ -176,7 +176,7 @@ const MainNTec: React.FC = () => {
                                                 id: prev.length + 1,
                                                 name: 'User',
                                                 idUser: 'user',
-                                                img: '/assets/images/voce.png',
+                                                img: 'assets/images/voce.png',
                                                 description: newPiuText,
                                                 comments: 0,
                                                 likes: 0,
