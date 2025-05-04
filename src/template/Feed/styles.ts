@@ -100,3 +100,27 @@ export const ComponentWrapper = styled.div`
         transform: scale(1.05);
     }
 `;
+
+export const StyledHamburguerButton = styled.div`
+    display: flex;
+    color: #fff;
+    font-size: 24px;
+    position: fixed;
+    align-items: center;
+`;
+
+export const HamburgerButton = styled.div`
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        cursor: pointer;
+    }
+`;
+
+export const StyledImgLogo = styled.img`
+    width: 64px;
+    height: 64px;
+`;

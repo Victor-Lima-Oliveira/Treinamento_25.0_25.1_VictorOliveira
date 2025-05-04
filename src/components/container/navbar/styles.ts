@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 interface StyledLinkProps {
     isActive?: boolean;
+    isActiveMenu?: boolean;
 }
 
-export const StyledNavbar = styled.div`
+export const StyledNavbar = styled.div<StyledLinkProps>`
     width: 20%;
     height: 100vh;
     border-right: 1px solid var(--Slate-8, #4c5155);
@@ -13,7 +14,15 @@ export const StyledNavbar = styled.div`
     flex-direction: column;
 
     @media (max-width: 1024px) {
-        display: none;
+        display: ${({ isActiveMenu }) => (isActiveMenu ? 'flex' : 'none')};
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 40%;
+        background-color: #1a1d1e;
+        padding: 16px;
+        z-index: 1000;
     }
 `;
 
@@ -81,4 +90,8 @@ export const StyledFooter = styled.div`
     flex-direction: column;
     padding-bottom: 46px;
     gap: 16px;
+
+    @media (max-width: 1024px) {
+        flex-direction: row;
+    }
 `;

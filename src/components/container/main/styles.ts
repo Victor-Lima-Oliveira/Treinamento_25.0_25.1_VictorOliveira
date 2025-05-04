@@ -7,12 +7,21 @@ export const StyledMain = styled.main`
     padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 46px;
+    gap: 32px;
     overflow-y: auto;
     -ms-overflow-style: none; /* IE e Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+        display: none; /* Chrome, Safari */
+    }
+
+    @media (max-width: 1024px) {
+        padding: 16px;
+    }
+    @media (max-width: 728px) {
+        padding: 8px;
+        gap: 16px;
+    }
 `;
 
 export const Icons = styled.div`

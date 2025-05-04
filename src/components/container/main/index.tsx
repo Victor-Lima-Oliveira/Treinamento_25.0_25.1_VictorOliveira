@@ -145,80 +145,88 @@ const MainNTec: React.FC = () => {
     };
 
     return (
-        <S.StyledMain>
-            <TextInput placeholder="Ouvir um piu..." icon="Search" />
-            <TextInput
-                placeholder="Quero dar um piu..."
-                icon="None"
-                maxLength={140}
-                value={newPiuText}
-                onChange={(e) => setNewPiuText(e.target.value)}
-                row={5}
-                footer={
-                    <S.Icons>
-                        <S.Icons1>
-                            <Icon name="Image" color="#fff" />
-                            <Icon name="Video" color="#fff" />
-                            <Icon name="Smile" color="#fff" />
-                            <Icon name="Tag" color="#fff" />
-                            <Icon name="Gif" color="#fff" />
-                        </S.Icons1>
-                        <S.Icons1>
-                            <Icon
-                                name="Send"
-                                color="#fff"
-                                onClick={() => {
-                                    if (!newPiuText.trim()) return;
+        <>
+            <S.StyledMain>
+                <TextInput placeholder="Ouvir um piu..." icon="Search" />
+                <TextInput
+                    placeholder="Quero dar um piu..."
+                    icon="None"
+                    maxLength={140}
+                    value={newPiuText}
+                    onChange={(e) => setNewPiuText(e.target.value)}
+                    row={5}
+                    footer={
+                        <S.Icons>
+                            <S.Icons1>
+                                <Icon name="Image" color="#fff" />
+                                <Icon name="Video" color="#fff" />
+                                <Icon name="Smile" color="#fff" />
+                                <Icon name="Tag" color="#fff" />
+                                <Icon name="Gif" color="#fff" />
+                            </S.Icons1>
+                            <S.Icons1>
+                                <Icon
+                                    name="Send"
+                                    color="#fff"
+                                    onClick={() => {
+                                        if (!newPiuText.trim()) return;
 
-                                    setPius((prev) => [
-                                        {
-                                            id: prev.length + 1,
-                                            name: 'User',
-                                            idUser: 'user',
-                                            img: '/assets/images/voce.png',
-                                            description: newPiuText,
-                                            comments: 0,
-                                            likes: 0,
-                                            repiu: 0,
-                                            liked: false,
-                                            repiued: false,
-                                            onDelete: () =>
-                                                callbackDelete(prev.length + 1),
-                                            onLike: () =>
-                                                callbackLike(prev.length + 1),
-                                            onRepiu: () =>
-                                                callbackRepiu(prev.length + 1)
-                                        },
-                                        ...prev // Coloca o novo piu no começo da lista
-                                    ]);
+                                        setPius((prev) => [
+                                            {
+                                                id: prev.length + 1,
+                                                name: 'User',
+                                                idUser: 'user',
+                                                img: '/assets/images/voce.png',
+                                                description: newPiuText,
+                                                comments: 0,
+                                                likes: 0,
+                                                repiu: 0,
+                                                liked: false,
+                                                repiued: false,
+                                                onDelete: () =>
+                                                    callbackDelete(
+                                                        prev.length + 1
+                                                    ),
+                                                onLike: () =>
+                                                    callbackLike(
+                                                        prev.length + 1
+                                                    ),
+                                                onRepiu: () =>
+                                                    callbackRepiu(
+                                                        prev.length + 1
+                                                    )
+                                            },
+                                            ...prev // Coloca o novo piu no começo da lista
+                                        ]);
 
-                                    setNewPiuText(''); // limpa o input após enviar
-                                }}
-                            />
-                        </S.Icons1>
-                    </S.Icons>
-                }
-            />
-            <hr />
-            {Pius.map((piu) => (
-                <PiuNTec
-                    key={piu.id}
-                    id={piu.id}
-                    name={piu.name}
-                    idUser={piu.idUser}
-                    img={piu.img}
-                    description={piu.description}
-                    comments={piu.comments}
-                    likes={piu.likes}
-                    repiu={piu.repiu}
-                    liked={piu.liked}
-                    repiued={piu.repiued}
-                    onDelete={() => callbackDelete(piu.id)}
-                    onLike={() => callbackLike(piu.id)}
-                    onRepiu={() => callbackRepiu(piu.id)}
+                                        setNewPiuText(''); // limpa o input após enviar
+                                    }}
+                                />
+                            </S.Icons1>
+                        </S.Icons>
+                    }
                 />
-            ))}
-        </S.StyledMain>
+                <hr />
+                {Pius.map((piu) => (
+                    <PiuNTec
+                        key={piu.id}
+                        id={piu.id}
+                        name={piu.name}
+                        idUser={piu.idUser}
+                        img={piu.img}
+                        description={piu.description}
+                        comments={piu.comments}
+                        likes={piu.likes}
+                        repiu={piu.repiu}
+                        liked={piu.liked}
+                        repiued={piu.repiued}
+                        onDelete={() => callbackDelete(piu.id)}
+                        onLike={() => callbackLike(piu.id)}
+                        onRepiu={() => callbackRepiu(piu.id)}
+                    />
+                ))}
+            </S.StyledMain>
+        </>
     );
 };
 
