@@ -2,10 +2,16 @@ import styled from 'styled-components';
 
 export const StyledAsideItem = styled.div`
     display: flex;
+    gap: 16px;
+    height: 15vh;
 `;
 
 export const StyledImg = styled.img`
+    display: flex;
+    align-items: center;
     width: 50%;
+    height: auto;
+    object-fit: cover;
 `;
 
 export const StyledTitleItem = styled.h3`
@@ -15,9 +21,8 @@ export const StyledTitleItem = styled.h3`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
 `;
 
 export const StyledDescriptionItem = styled.p`
@@ -36,6 +41,6 @@ export const StyledAsideItemRight = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: left;
 `;

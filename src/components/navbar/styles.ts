@@ -7,6 +7,10 @@ export const StyledNavbar = styled.div`
     background: var(--Slate-2, #1a1d1e);
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 export const StyledLogo = styled.div`
@@ -18,7 +22,16 @@ export const StyledLogo = styled.div`
 `;
 
 export const StyledImg = styled.img`
-    width: 50%;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+`;
+
+export const StyledImgLogo = styled.img`
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 5vh;
 `;
 
 export const StyledNav = styled.nav`

@@ -1,15 +1,24 @@
 import * as S from './styles';
 
-export const TrendsPiuNTec: React.FC = () => {
+interface TrendsPiuProps {
+    img: string;
+    title: string;
+    description: string;
+}
+
+export const TrendsPiuNTec: React.FC<TrendsPiuProps> = ({
+    img,
+    title,
+    description
+}) => {
     return (
         <>
             <S.StyledAsideItem>
-                <S.StyledImg src="/assets/images/logo.png" alt="logo" />
+                <S.StyledImg src={img} alt="logo" />
                 <S.StyledAsideItemRight>
-                    <S.StyledTitleItem>Eleições 2022</S.StyledTitleItem>
+                    <S.StyledTitleItem>{title}</S.StyledTitleItem>
                     <S.StyledDescriptionItem>
-                        Eleição em São Paulo: veja Pius sobre a disputa de
-                        segundo turno entre Neymar e Vini Jr.
+                        {description}
                     </S.StyledDescriptionItem>
                 </S.StyledAsideItemRight>
             </S.StyledAsideItem>

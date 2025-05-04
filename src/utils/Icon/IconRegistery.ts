@@ -16,6 +16,7 @@ import PersonIcon from 'assets/icons/PersonIcon';
 import SettingsIcons from 'assets/icons/SettingsIcons';
 import LogoutIcon from 'assets/icons/LogoutIcon';
 import FireIcon from 'assets/icons/FireIcon';
+import TrashIcon from 'assets/icons/TrashIcon';
 
 import { IconName } from '../Icon/IconName';
 
@@ -42,6 +43,7 @@ const IconRegistry: Record<
     Settings: SettingsIcons,
     Logout: LogoutIcon,
     Fire: FireIcon,
+    Trash: TrashIcon,
     Home: HomeIcon
 };
 

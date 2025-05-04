@@ -7,8 +7,9 @@ import * as S from './styles';
 
 export const PiusBase: PiuProps[] = [
     {
+        id: 1,
         name: 'Nome de usuario',
-        id: 'user',
+        idUser: 'user',
         img: '/assets/images/user.png',
         description:
             'Only love can hurt like this... only love can hurt like this',
@@ -17,8 +18,9 @@ export const PiusBase: PiuProps[] = [
         repiu: 1
     },
     {
+        id: 2,
         name: 'Pedro Souza',
-        id: 'pebaiano',
+        idUser: 'pebaiano',
         img: '/assets/images/pebaiano.png',
         description:
             'NÃO há imoralidade em furar a fila do bandejão quem não defende é porque não tem amigos',
@@ -27,8 +29,9 @@ export const PiusBase: PiuProps[] = [
         repiu: 5
     },
     {
+        id: 3,
         name: 'Henri Sanson',
-        id: 'OCarasco',
+        idUser: 'OCarasco',
         img: '/assets/images/ocarasco.png',
         description:
             'Hoje o sol não nasceu em Versalhes — caiu em Paris às 10h22. Brilhou pela última vez na Place de la Révolution. E fui eu quem apagou a luz. #AuRevoirRoi #CorteReal',
@@ -37,8 +40,9 @@ export const PiusBase: PiuProps[] = [
         repiu: 5
     },
     {
+        id: 4,
         name: 'Martinho Lutero',
-        id: 'NovoTestamento',
+        idUser: 'NovoTestamento',
         description:
             '95 razões pra você não me subestimar — preguei na porta, mas foi na alma que doeu. Indulgência não compra perdão, e agora é pessoal. #EscorpiãoReforma #FogoEfé',
         img: '/assets/images/novotestamento.png',
@@ -47,8 +51,9 @@ export const PiusBase: PiuProps[] = [
         repiu: 5
     },
     {
+        id: 5,
         name: 'Galileu Galilei',
-        id: 'Sol',
+        idUser: 'Sol',
         description:
             'E pur si muove — mas fiquem à vontade pra continuar achando que o universo gira em torno de vocês. #SpoilerDoSéculoXVII',
         img: '/assets/images/sol.png',
@@ -57,8 +62,9 @@ export const PiusBase: PiuProps[] = [
         repiu: 5
     },
     {
+        id: 6,
         name: 'Napoleão Bonaparte',
-        id: 'OConquistador',
+        idUser: 'OConquistador',
         description:
             'Bati à porta de Portugal e o rei correu pro outro lado do oceano. Dizem que trouxe a corte. Eu digo que trouxe o medo. #CoragemFica #DomJoãoVoa',
         img: '/assets/images/oconquistador.png',
@@ -67,6 +73,10 @@ export const PiusBase: PiuProps[] = [
         repiu: 5
     }
 ];
+
+export const usuarioLogado = {
+    id: 'user'
+};
 
 const MainNTec: React.FC = () => {
     const [Pius, setPius] = useState<PiuProps[]>(PiusBase);
@@ -100,9 +110,10 @@ const MainNTec: React.FC = () => {
 
                                     setPius((prev) => [
                                         {
+                                            id: prev.length + 1,
                                             name: 'User',
-                                            id: 'user',
-                                            img: '/assets/images/logo.png',
+                                            idUser: 'user',
+                                            img: '/assets/images/voce.png',
                                             description: newPiuText,
                                             comments: 0,
                                             likes: 0,
@@ -122,8 +133,9 @@ const MainNTec: React.FC = () => {
             {Pius.map((piu) => (
                 <PiuNTec
                     key={piu.id}
-                    name={piu.name}
                     id={piu.id}
+                    name={piu.name}
+                    idUser={piu.idUser}
                     img={piu.img}
                     description={piu.description}
                     comments={piu.comments}

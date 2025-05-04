@@ -1,8 +1,10 @@
 import Icon from 'components/Icon';
+import { usuarioLogado as U } from 'components/main';
 import * as S from './styles';
 
 export interface PiuProps {
-    id: string;
+    id: number;
+    idUser: string;
     name: string;
     img: string;
     description: string;
@@ -11,29 +13,42 @@ export interface PiuProps {
     repiu: number;
 }
 
-const PiuNTec: React.FC<PiuProps> = (Props) => {
+const PiuNTec: React.FC<PiuProps> = ({
+    idUser,
+    name,
+    img,
+    description,
+    comments,
+    likes,
+    repiu
+}) => {
     return (
         <S.StyledPiu>
             <S.StyledPiuHead>
-                <S.StyledPiuImage src={Props.img} alt="piu" />
+                <S.StyledPiuImage
+                    hasBorder={idUser === U.id}
+                    src={img}
+                    alt="piu"
+                />
                 <S.StyledPiuTitle>
-                    <S.StyledPiuTitleText>{Props.name}</S.StyledPiuTitleText>
-                    <S.StyledPiuTitleText>@{Props.id}</S.StyledPiuTitleText>
+                    <S.StyledPiuTitleText>{name}</S.StyledPiuTitleText>
+                    <S.StyledPiuTitleText>@{idUser}</S.StyledPiuTitleText>
                 </S.StyledPiuTitle>
+                {idUser === U.id && <Icon name="Trash" color="red" />}
             </S.StyledPiuHead>
-            <S.StyledPiuDescription>{Props.description}</S.StyledPiuDescription>
+            <S.StyledPiuDescription>{description}</S.StyledPiuDescription>
             <S.StyledPiuFooter>
                 <S.StyledPiuFooterText>
                     <Icon name="Reload" />
-                    {Props.repiu}
+                    {repiu}
                 </S.StyledPiuFooterText>
                 <S.StyledPiuFooterText>
                     <Icon name="ChatCircle" />
-                    {Props.comments}
+                    {comments}
                 </S.StyledPiuFooterText>
                 <S.StyledPiuFooterText>
                     <Icon name="Like" />
-                    {Props.likes}
+                    {likes}
                 </S.StyledPiuFooterText>
             </S.StyledPiuFooter>
         </S.StyledPiu>

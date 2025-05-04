@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface StyledPiuImageProps {
+    hasBorder?: boolean;
+}
+
 export const StyledPiu = styled.div`
     display: flex;
     padding: 24px;
@@ -13,22 +17,27 @@ export const StyledPiu = styled.div`
 `;
 
 export const StyledPiuHead = styled.div`
+    width: 100%;
     display: flex;
 `;
 
-export const StyledPiuImage = styled.img`
+export const StyledPiuImage = styled.img<StyledPiuImageProps>`
     display: flex;
     padding: 8px;
     align-items: center;
     width: 80px;
     height: 80px;
     border-radius: 48px;
-    border: 4px solid var(--Institutional-Blue-Fade, #004c97);
     margin-right: 10px;
+    border: ${(props) =>
+        props.hasBorder
+            ? '4px solid var(--Institutional-Blue-Fade, #004c97)'
+            : 'none'};
 `;
 
 export const StyledPiuTitle = styled.div`
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;

@@ -5,7 +5,7 @@ const NavbarNTec: React.FC = () => {
     return (
         <S.StyledNavbar>
             <S.StyledLogo>
-                <S.StyledImg src="/assets/images/logo.png" alt="logo" />
+                <S.StyledImgLogo src="/assets/images/logo.png" alt="logo" />
             </S.StyledLogo>
             <S.StyledNav>
                 <S.StyledLink href="#">
@@ -34,7 +34,7 @@ const NavbarNTec: React.FC = () => {
                 </S.StyledLink>
             </S.StyledNav>
             <S.StyledFooter>
-                <S.StyledImg src="/assets/images/logo.png" alt="logo" />
+                <S.StyledImg src="/assets/images/voce.png" alt="logo" />
                 <Icon name="Logout" />
             </S.StyledFooter>
         </S.StyledNavbar>

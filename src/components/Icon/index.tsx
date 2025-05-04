@@ -6,16 +6,23 @@ type IconProps = {
     name: IconName; // Agora usamos o tipo IconName diretamente
     color?: string;
     style?: React.CSSProperties;
+    disableRiple?: boolean;
 } & React.SVGProps<SVGSVGElement>;
 
 const Icon: React.FC<IconProps> = ({
     name,
     color = '#fff',
     style = {},
+    disableRiple = false,
     ...props
 }) => {
     const Svg = IconRegistry[name];
-    return <Svg {...props} style={{ color, ...style }} />;
+
+    const cursorStyle: React.CSSProperties = {
+        cursor: disableRiple ? 'default' : 'pointer'
+    };
+
+    return <Svg {...props} style={{ color, ...cursorStyle, ...style }} />;
 };
 
 export default Icon;
